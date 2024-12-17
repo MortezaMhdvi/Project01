@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'titr';
+    src: url('../fonts/BTitrBold.eot?#') format('eot'),
+    url('../fonts/BTitrBold.ttf') format('truetype'),
+    url('../fonts/BTitrBold.woff') format('woff');
+}
