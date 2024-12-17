@@ -15,8 +15,8 @@ class CreateBuildPhaseOrParameter extends Migration
     {
         Schema::create('build_phase_or_parameter', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('build_phase_id')->constrained('build_phase');
-            $table->foreignId('parameter_id')->constrained('parameter');
+            $table->foreignId('build_phase_id')->constrained('build_phases');
+            $table->foreignId('parameter_id')->constrained('parameters');
 
             $table->unique(['build_phase_id', 'parameter_id']);
             $table->timestamps();
