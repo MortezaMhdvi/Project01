@@ -31,7 +31,7 @@ class ParameterOptionsController extends Controller
         $parameterOptions->title = $request->input('title');
         $parameterOptions->save();
 
-        return redirect()->route('parameterOptions.index', compact('parameter_id'));
+        return redirect()->route('parameterOption.index', compact('parameter_id'));
     }
 
     public function show(ParameterOptions $parameterOptions)
@@ -48,13 +48,13 @@ class ParameterOptionsController extends Controller
         $parameterOption->title = $request->input('title');
         $parameterOption->save();
 
-        return redirect()->route('parameterOptions.index', compact('parameter_id'));
+        return redirect()->route('parameterOption.index', compact('parameter_id'));
     }
 
     public function destroy($parameter_id, ParameterOptions $parameterOption)
     {
         $parameterOption->delete();
-        return redirect()->route('parameterOptions.index', compact('parameter_id'));
+        return redirect()->route('parameterOption.index', compact('parameter_id'));
     }
 
 }

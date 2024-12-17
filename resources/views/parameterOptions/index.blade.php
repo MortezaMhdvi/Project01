@@ -4,7 +4,7 @@
 
 @section('content')
     {{--    @can('create-user')--}}
-    <a href="{{route('parameterOptions.create',$parameter_id)}}" class="btn btn-success btn-sm mt-4">add
+    <a href="{{route('parameterOption.create',$parameter_id)}}" class="btn btn-success btn-sm mt-4">add
         parameterOption</a>
     {{--    @endcan--}}
     <h3 class="mt-2"></h3>
@@ -27,12 +27,12 @@
                             <td>{{ $loop->index + 1 }}</td>
                             <td>{{ $item->title }}</td>
                             <td class="d-flex">
-                                <a href="{{ route('parameterOptions.edit', ['parameter_id' => $parameter_id, 'parameterOption' => $item->id]) }}" class="btn btn-info btn-sm m-1">
+                                <a href="{{ route('parameterOption.edit', ['parameter_id' => $parameter_id, 'parameterOption' => $item->id]) }}" class="btn btn-info btn-sm m-1">
                                     Edit
                                 </a>
 
 
-                                <form action="{{ route('parameterOptions.destroy', ['parameter_id' => $parameter_id, 'parameterOption' => $item->id]) }}"
+                                <form action="{{ route('parameterOption.destroy', ['parameter_id' => $parameter_id, 'parameterOption' => $item->id]) }}"
                                       method="POST"
                                       id="{{$item->id}}">
                                     @csrf
