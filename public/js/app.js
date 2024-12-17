@@ -10526,7 +10526,7 @@ jQuery.fn.extend( {
 
 			// The calling jQuery object (element matches) is not empty
 			// (and therefore has an element appears at this[ 0 ]) and the
-			// `value` parameter was not undefined. An empty jQuery object
+			// `value` parameters was not undefined. An empty jQuery object
 			// will result in `undefined` for elem = this[ 0 ] which will
 			// throw an exception if an attempt to read a data cache is made.
 			if ( elem && value === undefined ) {
@@ -13369,7 +13369,7 @@ Tween.propHooks = {
 				return tween.elem[ tween.prop ];
 			}
 
-			// Passing an empty string as a 3rd parameter to .css will automatically
+			// Passing an empty string as a 3rd parameters to .css will automatically
 			// attempt a parseFloat and fallback to a string if the parse fails.
 			// Simple values such as "10px" are parsed to Float;
 			// complex values such as "rotate(1rad)" are returned as-is.
@@ -15623,7 +15623,7 @@ jQuery.extend( {
 
 		// Add protocol if not provided (prefilters might expect it)
 		// Handle falsy url in the settings object (trac-10093: consistency with old signature)
-		// We also use the url parameter if available
+		// We also use the url parameters if available
 		s.url = ( ( url || s.url || location.href ) + "" )
 			.replace( rprotocol, location.protocol + "//" );
 
@@ -16326,7 +16326,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 				rjsonp.test( s.data ) && "data"
 		);
 
-	// Handle iff the expected data type is "jsonp" or we have a parameter to set
+	// Handle iff the expected data type is "jsonp" or we have a parameters to set
 	if ( jsonProp || s.dataTypes[ 0 ] === "jsonp" ) {
 
 		// Get callback name, remembering preexisting value associated with it
@@ -20977,8 +20977,8 @@ return jQuery;
      * The base implementation of `_.rest` which doesn't validate or coerce arguments.
      *
      * @private
-     * @param {Function} func The function to apply a rest parameter to.
-     * @param {number} [start=func.length-1] The start position of the rest parameter.
+     * @param {Function} func The function to apply a rest parameters to.
+     * @param {number} [start=func.length-1] The start position of the rest parameters.
      * @returns {Function} Returns the new function.
      */
     function baseRest(func, start) {
@@ -21529,7 +21529,7 @@ return jQuery;
      *
      * @private
      * @type {Function}
-     * @param {Function} func The function to apply a rest parameter to.
+     * @param {Function} func The function to apply a rest parameters to.
      * @returns {Function} Returns the new function.
      */
     var castRest = baseRest;
@@ -22900,7 +22900,7 @@ return jQuery;
      * A specialized version of `baseRest` which flattens the rest array.
      *
      * @private
-     * @param {Function} func The function to apply a rest parameter to.
+     * @param {Function} func The function to apply a rest parameters to.
      * @returns {Function} Returns the new function.
      */
     function flatRest(func) {
@@ -23604,8 +23604,8 @@ return jQuery;
      * A specialized version of `baseRest` which transforms the rest array.
      *
      * @private
-     * @param {Function} func The function to apply a rest parameter to.
-     * @param {number} [start=func.length-1] The start position of the rest parameter.
+     * @param {Function} func The function to apply a rest parameters to.
+     * @param {number} [start=func.length-1] The start position of the rest parameters.
      * @param {Function} transform The rest array transform.
      * @returns {Function} Returns the new function.
      */
@@ -27843,14 +27843,14 @@ return jQuery;
      * an array.
      *
      * **Note:** This method is based on the
-     * [rest parameter](https://mdn.io/rest_parameters).
+     * [rest parameters](https://mdn.io/rest_parameters).
      *
      * @static
      * @memberOf _
      * @since 4.0.0
      * @category Function
-     * @param {Function} func The function to apply a rest parameter to.
-     * @param {number} [start=func.length-1] The start position of the rest parameter.
+     * @param {Function} func The function to apply a rest parameters to.
+     * @param {number} [start=func.length-1] The start position of the rest parameters.
      * @returns {Function} Returns the new function.
      * @example
      *
@@ -32901,7 +32901,7 @@ return jQuery;
      * truthy when invoked with the arguments it receives.
      *
      * Following shorthands are possible for providing predicates.
-     * Pass an `Object` and it will be used as an parameter for `_.matches` to create the predicate.
+     * Pass an `Object` and it will be used as an parameters for `_.matches` to create the predicate.
      * Pass an `Array` of parameters for `_.matchesProperty` and the predicate will be created using them.
      *
      * @static
@@ -32931,7 +32931,7 @@ return jQuery;
      * truthy when invoked with the arguments it receives.
      *
      * Following shorthands are possible for providing predicates.
-     * Pass an `Object` and it will be used as an parameter for `_.matches` to create the predicate.
+     * Pass an `Object` and it will be used as an parameters for `_.matches` to create the predicate.
      * Pass an `Array` of parameters for `_.matchesProperty` and the predicate will be created using them.
      *
      * @static

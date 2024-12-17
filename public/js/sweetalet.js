@@ -882,7 +882,7 @@
                 e in y
                     ? it(t, y[e])
                     : (k(
-                          'The "position" parameter is not valid, defaulting to "center"'
+                          'The "position" parameters is not valid, defaulting to "center"'
                       ),
                       it(t, y.center));
             })(n, e.position),
@@ -1206,7 +1206,7 @@
                               (n.textContent = ""),
                               i >= o.length &&
                                   k(
-                                      "Invalid currentProgressStep parameter, it should be less than progressSteps.length (currentProgressStep like JS arrays starts from 0)"
+                                      "Invalid currentProgressStep parameters, it should be less than progressSteps.length (currentProgressStep like JS arrays starts from 0)"
                                   ),
                               o.forEach(function (t, r) {
                                   var a = Kt(t);
@@ -1738,7 +1738,7 @@
                     : Ve(t, i);
             } else
                 E(
-                    'The "input" parameter is needed to be set when using returnInputValueOn'.concat(
+                    'The "input" parameters is needed to be set when using returnInputValueOn'.concat(
                         A(e)
                     )
                 );
@@ -2047,11 +2047,11 @@
             return Ge[t];
         },
         on = function (t) {
-            tn(t) || k('Unknown parameter "'.concat(t, '"'));
+            tn(t) || k('Unknown parameters "'.concat(t, '"'));
         },
         rn = function (t) {
             Qe.includes(t) &&
-                k('The parameter "'.concat(t, '" is incompatible with toasts'));
+                k('The parameters "'.concat(t, '" is incompatible with toasts'));
         },
         an = function (t) {
             var e = nn(t);
@@ -2072,7 +2072,7 @@
                         enumerable: !0,
                     },
                 });
-        } else k("You're trying to update the closed or closing popup, that won't work. Use the update() method in preConfirm parameter or show a new popup.");
+        } else k("You're trying to update the closed or closing popup, that won't work. Use the update() method in preConfirm parameters or show a new popup.");
     }
     var un = function (t) {
         var e = {};
@@ -2080,7 +2080,7 @@
             Object.keys(t).forEach(function (n) {
                 en(n)
                     ? (e[n] = t[n])
-                    : k("Invalid parameter to update: ".concat(n));
+                    : k("Invalid parameters to update: ".concat(n));
             }),
             e
         );
@@ -2718,7 +2718,7 @@
                     ("string" == typeof t.target &&
                         !document.querySelector(t.target)) ||
                     ("string" != typeof t.target && !t.target.appendChild)) &&
-                    (k('Target parameter is not valid, defaulting to "body"'),
+                    (k('Target parameters is not valid, defaulting to "body"'),
                     (t.target = "body"));
             })(t),
             "string" == typeof t.title &&
@@ -2766,7 +2766,7 @@
                                     for (var e in (!1 === t.backdrop &&
                                         t.allowOutsideClick &&
                                         k(
-                                            '"allowOutsideClick" parameter requires `backdrop` parameter to be set to `true`'
+                                            '"allowOutsideClick" parameters requires `backdrop` parameters to be set to `true`'
                                         ),
                                     t))
                                         on(e), t.toast && rn(e), an(e);

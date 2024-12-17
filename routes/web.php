@@ -31,3 +31,6 @@ Route::resource('/customer','CustomerController');
 Route::resource('/phaseProfile','PhaseProfileController');
 Route::resource('/buildPhase','BuildPhaseController');
 Route::resource('/machine','MachineController');
+Route::resource('/parameter','ParameterController');
+Route::resource('parameter/{parameter_id}/parameterOptions','ParameterOptionsController');
+
