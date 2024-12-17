@@ -13,7 +13,6 @@ class ParameterOptionsController extends Controller
         $parameter_id = $request->route()->parameters('parameter_id')['parameter_id'];
         $parameterOptions = ParameterOptions::where('parameter_id', $parameter_id)->get();
 
-//        dd($parameterOptions);
         return view('parameterOptions.index', compact('parameterOptions', 'parameter_id'));
     }
 
@@ -25,12 +24,14 @@ class ParameterOptionsController extends Controller
 
     public function store(Request $request)
     {
+        $parameter_id = $request->route()->parameters('parameter_id')['parameter_id'];
+
         $parameterOptions = new ParameterOptions();
         $parameterOptions->parameter_id = $request->route()->parameters('parameter_id')['parameter_id'];
         $parameterOptions->title = $request->input('title');
         $parameterOptions->save();
 
-        return redirect()->route('parameterOptions.index', ['parameter_id' => $request->route()->parameters('parameter_id')['parameter_id']]);
+        return redirect()->route('parameterOptions.index', compact('parameter_id'));
     }
 
     public function show(ParameterOptions $parameterOptions)
@@ -42,17 +43,18 @@ class ParameterOptionsController extends Controller
         return view('parameterOptions.edit', compact('parameter_id', 'parameterOption'));
     }
 
-    public function update(Request $request,$parameter_id, ParameterOptions $parameterOption)
+    public function update(Request $request, $parameter_id, ParameterOptions $parameterOption)
     {
         $parameterOption->title = $request->input('title');
         $parameterOption->save();
 
-        return redirect()->route('parameterOptions.index', ['parameter_id' => $request->route()->parameters('parameter_id')['parameter_id']]);
+        return redirect()->route('parameterOptions.index', compact('parameter_id'));
     }
 
-    public function destroy($parameter_id,ParameterOptions $parameterOption)
+    public function destroy($parameter_id, ParameterOptions $parameterOption)
     {
         $parameterOption->delete();
         return redirect()->route('parameterOptions.index', compact('parameter_id'));
     }
+
 }

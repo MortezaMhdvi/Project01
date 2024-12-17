@@ -15,4 +15,9 @@ class Parameter extends Model
         return $this->hasMany(ParameterOptions::class);
     }
 
+    public function buildPhase()
+    {
+        return $this->belongsToMany(BuildPhase::class);
+    }
+
 }

@@ -26,18 +26,19 @@
                         <tr>
                             <td>{{ $loop->index + 1 }}</td>
                             <td>{{ $item->title }}</td>
-                            <td>
-                                <a href="{{ route('parameterOptions.edit', ['parameter_id' => $parameter_id, 'parameterOption' => $item->id]) }}" class="btn btn-info btn-sm">
+                            <td class="d-flex">
+                                <a href="{{ route('parameterOptions.edit', ['parameter_id' => $parameter_id, 'parameterOption' => $item->id]) }}" class="btn btn-info btn-sm m-1">
                                     Edit
                                 </a>
 
 
                                 <form action="{{ route('parameterOptions.destroy', ['parameter_id' => $parameter_id, 'parameterOption' => $item->id]) }}"
                                       method="POST"
-                                      style="display:inline;">
+                                      id="{{$item->id}}">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    <a href="#" class="btn btn-danger btn-sm m-1"
+                                    onclick="deleteUser({{$item->id}})">delete </a>
                                 </form>
 
                             </td>
@@ -55,7 +56,7 @@
         function deleteUser(id) {
             Swal.fire({
                 title: "",
-                text: "آیا از حذف این گروه مرحله تولید اطمینان دارید",
+                text: "آیا از حذف این آپشن پارامتر اطمینان دارید",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
