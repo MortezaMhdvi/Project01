@@ -19,7 +19,10 @@ class CreateRelBetweenBarcodAndBarcodeDetailes extends Migration
                 ->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('barcode_details_id')->constrained('barcode_details')
                 ->cascadeOnDelete()->cascadeOnUpdate();
+
             $table->unique(['barcode_id', 'barcode_details_id']);
+
+            $table->unsignedTinyInteger('order');
             $table->timestamps();
         });
     }

@@ -21,10 +21,12 @@
 <script src="/js/bootstrap.bundle.min.js"></script>
 <script src="/js/select2.min.js"></script>
 <script src="/js/sweetalet.js"></script>
+<script src="/js/jquery.repeater.min.js"></script>
 <script>
     $(document).ready(function () {
         $('.select2').select2();
     });
+
 </script>
 
 @yield('script')

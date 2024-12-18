@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
 //          PermissionSeeder::class,
 //          RoleSeeder::class,
 //          CustomerSeeder::class,
-//        BuildPhaseSeeder::class
-
+//          BuildPhaseSeeder::class
+            BarcodeDetailsSeeder::class
         ]);
     }
 }

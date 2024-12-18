@@ -68,6 +68,7 @@
                             <li><a class="dropdown-item" href="{{route('buildPhase.index')}}">مرحله تولید</a></li>
                             <li><a class="dropdown-item" href="{{route('machine.index')}}">دستگاه</a></li>
                             <li><a class="dropdown-item" href="{{route('parameter.index')}}">پارامتر</a></li>
+                            <li><a class="dropdown-item" href="{{route('barcode.index')}}">بارکد</a></li>
                         </ul>
                     </li>
 
