@@ -2,7 +2,6 @@
 
 @section('title')
     افزودن کاربر جدید
-
 @endsection
 
 @section('content')
@@ -40,6 +39,7 @@
                 </span>
                     @enderror
                 </div>
+
                 <div class="col-4 form-group my-2">
                     <label for=""> تایپ مورد نظر</label>
                     <select name="type" id="type" class="form-control @error('type') is-invalid @enderror">
@@ -54,65 +54,97 @@
                 </span>
                     @enderror
                 </div>
-
-                <div class="col-12 form-group targetDiv" id="div0">
-                        <div id="group1" class="fvrduplicate">
+                <!-- تغییر در این قسمت برای دکمه و تکرارکننده‌ها -->
+                <div class="repeater">
+                    <div data-repeater-list="barcode_details">
+                        <div data-repeater-item>
                             <div class="row entry mt-4">
-                                <div class="col-xs-12 col-md-3">
+                                <div class="col-xs-12 col">
                                     <div class="form-group">
-                                        <select name="barcode_details" id="barcodeDetails"
-                                                class="form-control form-control-sm">
-                                            <option value="{{null}}">انتخاب کنید</option>
+                                        <select name="barcode_detail_id"
+                                                class="form-control form-control-sm barcodeDetails">
+                                            <option value="">انتخاب کنید</option>
                                             @foreach($barcodeDetails as $item)
-                                                <option data-type="{{$item->type}}"
-                                                        value="{{$item->id}}">{{$item->value}}</option>
+                                                <option data-type="{{ $item->type }}"
+                                                        value="{{ $item->id }}">{{ $item->value }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-md-3">
+                                <div class="col-xs-12 col">
                                     <div class="form-group">
-                                        <input class="form-control form-control-sm" name="barcode_details[][order]" type="number"
-                                               placeholder="ترتیب" min="0">
+                                        <input class="form-control form-control-sm order" name="order" type="number"
+                                               placeholder="ترتیب" min="1" value="1">
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-md-2">
+                                <div class="col-xs-12 col">
                                     <div class="form-group">
-                                        <label>&nbsp;</label>
-                                        <button type="button" class="btn btn-success btn-sm btn-add">
-                                            <i class="fa fa-plus" aria-hidden="true">+</i>
+                                        <button data-repeater-delete type="button" class="btn btn-danger btn-sm">حذف
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- دکمه اضافه کردن ردیف جدید -->
+                    <input data-repeater-create type="button" value="Add" class="btn btn-success btn-sm"/>
                 </div>
 
+                <!-- دکمه ارسال فرم -->
                 <div class="col form-group my-3">
                     <div class="row">
                         <div class="col">
-                            <button type="submit" class="btn btn-primary ">افزودن</button>
+                            <button type="submit" class="btn btn-primary">افزودن</button>
                         </div>
                     </div>
                 </div>
-            </div>
+
         </form>
     </div>
 
 @endsection
+
 @section('script')
     <script>
-        $('#type').change(function (e) {
-            let type = $(this).val();
-            $('#barcodeDetails option').each(function () {
+        function setBarcodeDetails(el, type) {
+            el.children("option").each(function () {
                 if ($(this).data("type") !== type) {
                     $(this).hide();
                 } else {
                     $(this).show();
                 }
             });
-        })
+        }
+
+        //
+        $('#type').change(function (e) {
+            let type = $(this).val();
+            setBarcodeDetails($(".barcodeDetails"), type)
+        });
+
+        $(document).ready(function () {
+            $('.repeater').repeater({
+                show: function () {
+                    $(this).slideDown()
+
+                    let type = $("[name=type]").val()
+                    setBarcodeDetails($(this).find(".barcodeDetails"), type)
+
+                    let maxOrder = 0;
+                    $('.order').each(function () {
+                        let orderValue = parseInt($(this).val()) || 0;
+                        maxOrder = Math.max(maxOrder, orderValue);
+                    });
+                    $(this).find('.order').val(maxOrder + 1);
+
+                },
+
+                repeaters: [{
+                    // selector: '.inner-repeater'
+                }]
+            });
+        });
 
     </script>
-
 @endsection

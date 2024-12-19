@@ -10,6 +10,6 @@ class Barcode extends Model
         'title','prefix','type'
     ];
     public function barcode_details(){
-        return $this->belongsToMany(BarcodeDetails::class);
+        return $this->belongsToMany(BarcodeDetails::class)->withPivot('order');
     }
 }

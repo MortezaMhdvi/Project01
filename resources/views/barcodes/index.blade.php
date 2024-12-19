@@ -3,26 +3,26 @@
 
 
 @section('content')
-{{--    @can('create-user')--}}
-        <a href="{{route('barcode.create')}}" class="btn btn-success btn-sm mt-4">add barcode</a>
-{{--    @endcan--}}
-<h3 class="mt-2"> مرحله تولید</h3>
+    {{--    @can('create-user')--}}
+    <a href="{{route('barcode.create')}}" class="btn btn-success btn-sm mt-4">add barcode</a>
+    {{--    @endcan--}}
+    <h3 class="mt-2"> مرحله تولید</h3>
     <div class="row ">
         @if(session('error'))
             <div class="alert alert-info alert-dismissible fade show">
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-               <span>{{session('error')}}</span>
+                <span>{{session('error')}}</span>
             </div>
         @endif
 
-{{--            @if(session()->has('error'))--}}
-{{--                <div class="alert alert-warning alert-dismissible fade show" role="alert">--}}
-{{--                    {{ session()->error }}--}}
-{{--                    <button type="button" class="close" data-dismiss="alert">&times;</button>--}}
-{{--                </div>--}}
-{{--            @endif--}}
+        {{--            @if(session()->has('error'))--}}
+        {{--                <div class="alert alert-warning alert-dismissible fade show" role="alert">--}}
+        {{--                    {{ session()->error }}--}}
+        {{--                    <button type="button" class="close" data-dismiss="alert">&times;</button>--}}
+        {{--                </div>--}}
+        {{--            @endif--}}
 
-            <div class="col">
+        <div class="col">
             <div class="table-responsive">
                 <table class="table table-striped table-bordered mt-5">
                     <thead>
@@ -41,8 +41,7 @@
                             <td>{{$item->order}}</td>
                             <td class="d-flex">
                                 {{--                                @can('edit-user')--}}
-                                <a href="{{route('barcode.edit',$item)}}" class="btn btn-info btn-sm m-1">edit
-                                    phase profile</a>
+                                <a href="{{route('barcode.edit',$item)}}" class="btn btn-info btn-sm m-1">edit barcode</a>
                                 {{--                                @endcan--}}
 
                                 {{--                                @can('delete-user')--}}
@@ -50,7 +49,7 @@
                                     @csrf
                                     @method('delete')
                                     <a href="#" class="btn btn-danger btn-sm m-1"
-                                       onclick="deleteUser({{$item->id}})">delete phase profile</a>
+                                       onclick="deleteUser({{$item->id}})">delete barcode</a>
                                 </form>
                                 {{--                                @endcan--}}
                             </td>
