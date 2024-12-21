@@ -12,4 +12,7 @@ class Barcode extends Model
     public function barcode_details(){
         return $this->belongsToMany(BarcodeDetails::class)->withPivot('order');
     }
+    public function labels(){
+        return $this->hasmany(Label::class);
+    }
 }

@@ -15,7 +15,7 @@
         </div>
         <div class="col-4 my-3">
             <form
-                action="{{route('parameterOptions.update',['parameter_id'=>$parameter_id , 'parameterOption'=>$parameterOption])}}"
+                action="{{route('parameterOption.update',['parameter_id'=>$parameter_id , 'parameterOption'=>$parameterOption])}}"
                 method="post" autocomplete="off">
                 @csrf
                 @method('PUT')

@@ -19,4 +19,8 @@ class BuildPhase extends Model
     {
         return $this->belongsToMany(Parameter::class,'build_phase_or_parameter');
     }
+
+    public function label(){
+        return $this->hasmany(Label::class);
+    }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBuildPhaseOrParameter extends Migration
+class CreateProductDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateBuildPhaseOrParameter extends Migration
      */
     public function up()
     {
-        Schema::create('build_phase_parameter', function (Blueprint $table) {
+        Schema::create('product_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('build_phase_id')->constrained('build_phases');
-            $table->foreignId('parameter_id')->constrained('parameters');
-
-            $table->unique(['build_phase_id', 'parameter_id']);
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateBuildPhaseOrParameter extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('build_phase_or_parameter');
+        Schema::dropIfExists('product_details');
     }
 }

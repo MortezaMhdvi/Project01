@@ -33,6 +33,6 @@ Route::resource('/buildPhase','BuildPhaseController');
 Route::resource('/machine','MachineController');
 Route::resource('/parameter','ParameterController');
 Route::resource('parameter/{parameter_id}/parameterOption','ParameterOptionsController');
-
 Route::resource('/barcode','BarcodeController');
-
+Route::resource('/label','LabelController');
+Route::resource('/product','ProductController');

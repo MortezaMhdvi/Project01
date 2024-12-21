@@ -13,7 +13,7 @@ class CreateRelBuildPhaseProfile extends Migration
      */
     public function up()
     {
-        Schema::create('rel_build_phase_profile', function (Blueprint $table) {
+        Schema::create('build_phase_profile', function (Blueprint $table) {
             $table->id();
             $table->foreignId('build_phase_id')->constrained('build_phases')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('phase_profile_id')->constrained('phase_profiles')->cascadeOnDelete()->cascadeOnUpdate();

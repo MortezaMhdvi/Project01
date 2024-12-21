@@ -12,6 +12,11 @@ class PhaseProfile extends Model
 
     public function buildPhase()
     {
-        return $this->belongsToMany(BuildPhase::class, 'rel_build_phase_profile','phase_profile_id', 'build_phase_id');
+        return $this->belongsToMany(BuildPhase::class);
+    }
+
+    public function product()
+    {
+        return $this->hasMany(Product::class);
     }
 }

@@ -13,13 +13,13 @@ class ParameterOptionsController extends Controller
         $parameter_id = $request->route()->parameters('parameter_id')['parameter_id'];
         $parameterOptions = ParameterOptions::where('parameter_id', $parameter_id)->get();
 
-        return view('parameterOption.index', compact('parameterOptions', 'parameter_id'));
+        return view('parameterOptions.index', compact('parameterOptions', 'parameter_id'));
     }
 
     public function create()
     {
         $parameter_id = request()->route()->parameters('parameter_id')['parameter_id'];
-        return view('parameterOption.create', compact('parameter_id'));
+        return view('parameterOptions.create', compact('parameter_id'));
     }
 
     public function store(Request $request)
@@ -40,7 +40,7 @@ class ParameterOptionsController extends Controller
 
     public function edit($parameter_id, ParameterOptions $parameterOption)
     {
-        return view('parameterOption.edit', compact('parameter_id', 'parameterOption'));
+        return view('parameterOptions.edit', compact('parameter_id', 'parameterOption'));
     }
 
     public function update(Request $request, $parameter_id, ParameterOptions $parameterOption)

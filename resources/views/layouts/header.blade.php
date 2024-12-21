@@ -41,19 +41,20 @@
                     <li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">اطلاعات
-                            پایه</a>
-
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">اطلاعات پایه</a>
                         <ul class="dropdown-menu">
-                            @can('index-user')
-                                <li><a class="dropdown-item" href="{{route('users.index')}}">کاربران</a></li>
-                            @endcan
+                            {{--                            @can('index-user')--}}
+                            <li><a class="dropdown-item" href="{{route('users.index')}}">کاربران</a></li>
+                            {{--                            @endcan--}}
 
-                            @can('index-role')
-                                <li><a class="dropdown-item" href="{{route('role.index')}}">سطوح دسترسی</a></li>
-                            @endcan
+                            {{--                            @can('index-role')--}}
+                            <li><a class="dropdown-item" href="{{route('role.index')}}">سطوح دسترسی</a></li>
+                            {{--                            @endcan--}}
+                            <li><a class="dropdown-item" href="{{route('label.index')}}">label</a></li>
+
                         </ul>
                     </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">سفارش</a>
                         <ul class="dropdown-menu">
@@ -64,15 +65,21 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">تولید</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{route('phaseProfile.index')}}">گروه مرحله تولید</a></li>
+                            <li><a class="dropdown-item" href="{{route('phaseProfile.index')}}">گروه مرحله تولید</a>
+                            </li>
                             <li><a class="dropdown-item" href="{{route('buildPhase.index')}}">مرحله تولید</a></li>
                             <li><a class="dropdown-item" href="{{route('machine.index')}}">دستگاه</a></li>
                             <li><a class="dropdown-item" href="{{route('parameter.index')}}">پارامتر</a></li>
                             <li><a class="dropdown-item" href="{{route('barcode.index')}}">بارکد</a></li>
                         </ul>
                     </li>
-
-
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">انبار</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{route('product.index')}}">محصول</a>
+                            </li>
+                        </ul>
+                    </li>
 
                 @endguest
             </ul>

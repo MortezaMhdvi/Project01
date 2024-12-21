@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="col-4 my-3">
-            <form action="{{route('parameterOptions.store',$parameter_id)}}" method="post" autocomplete="off">
+            <form action="{{route('parameterOption.store',$parameter_id)}}" method="post" autocomplete="off">
                 @csrf
                 <div class="form-group my-2">
                     <div class="row">
