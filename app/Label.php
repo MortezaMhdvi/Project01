@@ -19,4 +19,8 @@ class Label extends Model
     {
         return $this->belongsTo(BuildPhase::class);
     }
+
+    public function product_details(){
+        return $this->hasMany(ProductDetails::class);
+    }
 }

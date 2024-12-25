@@ -14,7 +14,7 @@
 <body>
 @include('layouts.header')
 
-<main class="col-md-9 px-md-4">
+<main class="col px-md-4">
     @yield('content')
 </main>
 <script src="/js/jquery-3.7.1.min.js"></script>

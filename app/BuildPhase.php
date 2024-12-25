@@ -12,15 +12,21 @@ class BuildPhase extends Model
 
     public function phaseProfile()
     {
-        return $this->belongsToMany(PhaseProfile::class, 'rel_build_phase_profile', 'build_phase_id', 'phase_profile_id');
+        return $this->belongsToMany(PhaseProfile::class);
     }
 
     public function parameter()
     {
-        return $this->belongsToMany(Parameter::class,'build_phase_or_parameter');
+        return $this->belongsToMany(Parameter::class, 'build_phase_or_parameter');
     }
 
-    public function label(){
+    public function label()
+    {
         return $this->hasmany(Label::class);
+    }
+
+    public function product_details()
+    {
+        return $this->hasMany(ProductDetails::class);
     }
 }

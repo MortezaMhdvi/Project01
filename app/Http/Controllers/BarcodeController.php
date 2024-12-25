@@ -22,6 +22,7 @@ class BarcodeController extends Controller
 
     public function store(Request $request)
     {
+        dd($request->all());
         $barcode = new Barcode();
         $barcode->title = $request->input('title');
         $barcode->prefix = $request->input('prefix');

@@ -36,7 +36,7 @@
                         <div class="col">
                             <label for="">نقش مورد نظر را انتخاب کنید</label>
                             <select name="permission_id[]" id="" class="form-control select2  @error('role_id') is-invalid @enderror" multiple="multiple">
-{{--                                <option value="{{null}}" disabled>انتخاب کنید</option>--}}
+                                <option value="{{null}}" disabled>انتخاب کنید</option>
                                 @foreach($permission as $item)
                                     <option value="{{$item->id}}">{{$item->title}}</option>
                                 @endforeach

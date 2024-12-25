@@ -14,4 +14,9 @@ class Product extends Model
     {
         return $this->belongsTo(PhaseProfile::class);
     }
+
+    public function product_details()
+    {
+        return $this->hasMany(ProductDetails::class);
+    }
 }
