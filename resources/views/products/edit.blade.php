@@ -97,9 +97,9 @@
 @section('script')
     <script>
         $(document).ready(function (e) {
-            const profileId = $('#phase_profile_id').val();
             $('#phase_profile_id').trigger('change')
         });
+
         let product_details = @json($product_details);
         let machines = @json($machine);
         let labels = @json($label);
@@ -152,11 +152,8 @@
                                 <label class="col-2">انتخاب لیبل:</label>
                                 <div class="col-5">
                                     <select class="form-control" name="tabs[${phase.id}][label]" ${product_detail?.enable == 1 ? 'enabled' : 'disabled'}>
-{{--                                                    @foreach($label as $item)--}}
-                                    <option value="{{$item->id}}">{{$item->title}}</option>
-{{--                                                    @endforeach--}}
-                                    ${labels.map(i => {
-                                        return `<option value="${i.id}" ${JSON.parse(product_detail?.machine ?? "[]").includes(i.id + "") ? 'selected' : ''}>${i.title}</option>`
+                                     ${labels.map(i => {
+                                        return `<option value="${i.id}" ${product_detail?.label_id  === i.id  ? 'selected' : '' }>${i.title}</option>`
                                     })}
                                     </select>
                                 </div>
@@ -191,5 +188,6 @@
                 el.find("select").prop("disabled", true);
             }
         });
+
     </script>
 @endsection

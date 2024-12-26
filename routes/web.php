@@ -36,4 +36,5 @@ Route::resource('parameter/{parameter_id}/parameterOption','ParameterOptionsCont
 Route::resource('/barcode','BarcodeController');
 Route::resource('/label','LabelController');
 Route::resource('/product','ProductController');
+Route::resource('/order','OrderController');
 Route::get('/build_phase/{id}','ProductController@getPhase');

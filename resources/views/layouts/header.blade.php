@@ -41,7 +41,8 @@
                     <li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">اطلاعات پایه</a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">اطلاعات
+                            پایه</a>
                         <ul class="dropdown-menu">
                             {{--                            @can('index-user')--}}
                             <li><a class="dropdown-item" href="{{route('users.index')}}">کاربران</a></li>
@@ -77,6 +78,8 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">انبار</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{route('product.index')}}">محصول</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{route('order.index')}}">سفارش</a>
                             </li>
                         </ul>
                     </li>

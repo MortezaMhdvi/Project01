@@ -4,9 +4,9 @@
 
 @section('content')
 {{--    @can('create-user')--}}
-        <a href="{{route('product.create')}}" class="btn btn-success btn-sm mt-4">add product</a>
+        <a href="{{route('order.create')}}" class="btn btn-success btn-sm mt-4">add order</a>
 {{--    @endcan--}}
-<h3 class="mt-2">محصولات</h3>
+<h3 class="mt-2">سفارش</h3>
     <div class="row ">
 
         <div class="col">
@@ -17,27 +17,31 @@
                         <td></td>
                         <td>عنوان</td>
                         <td>کد</td>
+                        <td>حجم سفارش</td>
+                        <td>تاریخ تحویل</td>
                         <td>عملیات</td>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($product as $item)
+                    @foreach($order as $item)
                         <tr>
                             <td>{{$loop->index+1}}</td>
                             <td>{{$item->title}}</td>
                             <td>{{$item->code}}</td>
+                            <td></td>
+                            <td></td>
                             <td class="d-flex">
                                 {{--                                @can('edit-user')--}}
-                                <a href="{{route('product.edit',$item)}}" class="btn btn-info btn-sm m-1">edit
-                                    product</a>
+                                <a href="{{route('order.edit',$item)}}" class="btn btn-info btn-sm m-1">edit
+                                    order</a>
                                 {{--                                @endcan--}}
 
                                 {{--                                @can('delete-user')--}}
-                                <form action="{{route('product.destroy',$item)}}" method="Post" id="{{$item->id}}">
+                                <form action="{{route('order.destroy',$item)}}" method="Post" id="{{$item->id}}">
                                     @csrf
                                     @method('delete')
                                     <a href="#" class="btn btn-danger btn-sm m-1"
-                                       onclick="deleteUser({{$item->id}})">delete product</a>
+                                       onclick="deleteUser({{$item->id}})">delete order</a>
                                 </form>
                                 {{--                                @endcan--}}
                             </td>
@@ -55,7 +59,7 @@
         function deleteUser(id) {
             Swal.fire({
                 title: "",
-                text: "آیا از حذف این لیبل اطمینان دارید",
+                text: "آیا از حذف این سفارش اطمینان دارید",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
