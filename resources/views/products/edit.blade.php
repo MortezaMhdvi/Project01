@@ -77,15 +77,13 @@
                             </div>
 
                         </div>
-
-
                     </div>
 
                 </div>
                 <div class="form-group my-3">
                     <div class="row">
                         <div class="col">
-                            <button type="submit" class="btn btn-primary ">افزودن محصول جدید</button>
+                            <button type="submit" class="btn btn-primary">افزودن محصول جدید</button>
                         </div>
                     </div>
                 </div>

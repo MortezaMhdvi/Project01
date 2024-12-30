@@ -38,3 +38,4 @@ Route::resource('/label','LabelController');
 Route::resource('/product','ProductController');
 Route::resource('/order','OrderController');
 Route::get('/build_phase/{id}','ProductController@getPhase');
+Route::get('order/{order}/orderContentDetail','OrderController@show')->name('show_order_content_detail');

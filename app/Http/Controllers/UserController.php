@@ -1,5 +1,8 @@
 <?php
+
 namespace App\Http\Controllers;
+
+use App\Order;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,14 +43,14 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
-    public function show($id)
+    public function show()
     {
     }
 
     public function edit(User $user)
     {
         if (auth()->user()->id == $user->id || $user->getRoleNames()[0] == "super-admin") {
-            return redirect()->route('users.index')->with('error','ویرایش این کاربر برای شما امکان پذیر نیست');
+            return redirect()->route('users.index')->with('error', 'ویرایش این کاربر برای شما امکان پذیر نیست');
         }
 
         $role = \Spatie\Permission\Models\Role::all();
@@ -69,7 +72,7 @@ class UserController extends Controller
 //        dd($user->getPermissionNames());
 
         if (auth()->user()->id == $user->id || $user->getRoleNames()->contains("super-admin")) {
-            return redirect()->route('users.index')->with('error','حذف این کاربر برای شما امکان پذیر نیست');
+            return redirect()->route('users.index')->with('error', 'حذف این کاربر برای شما امکان پذیر نیست');
         } else {
             $user->delete();
             $user->roles()->detach();

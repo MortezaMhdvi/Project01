@@ -43,6 +43,7 @@
                                     <a href="#" class="btn btn-danger btn-sm m-1"
                                        onclick="deleteUser({{$item->id}})">delete order</a>
                                 </form>
+                                <a href="{{route('show_order_content_detail',$item)}}" class="btn btn-warning btn-sm m-1">order content</a>
                                 {{--                                @endcan--}}
                             </td>
                         </tr>
